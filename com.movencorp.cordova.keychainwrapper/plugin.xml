@@ -21,8 +21,8 @@
 				<param name="onload" value="true" />
       </feature>
     </config-file>
-    <header-file src="src/keychainwrapper.h" />
-    <source-file src="src/keychainwrapper.m" />
+    <header-file src="src/ios/keychainwrapper.h" />
+    <source-file src="src/ios/keychainwrapper.m" />
     <header-file src="src/ios/KeychainItemWrapper.h" />
     <source-file src="src/ios/KeychainItemWrapper.m" />
     <framework src="Security.framework" />
