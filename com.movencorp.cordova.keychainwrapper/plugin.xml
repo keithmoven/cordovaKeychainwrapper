@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+	id="com.movencorp.cordova.keychainwrapper"
+	version="0.0.1">
+
+  <name>KeyChainWrapper</name>
+  <description>Cordova iOS KeyChain Access Plugin</description>
+  <license>Apache 2.0</license>
+  <keywords>cordova,keychain,ios</keywords>
+
+  <js-module src="www/keychainwrapper.js" name="keychainwrapper">
+    <clobbers target="window.keychain" />
+  </js-module>
+
+  <!-- ios -->
+  <platform name="ios">
+    <config-file target="config.xml" parent="/*">
+      <feature name="keychainwrapper">
+        <param name="ios-package" value="keychainwrapper" />
+				<param name="onload" value="true" />
+      </feature>
+    </config-file>
+    <header-file src="src/keychainwrapper.h" />
+    <source-file src="src/keychainwrapper.m" />
+    <header-file src="src/ios/KeychainItemWrapper.h" />
+    <source-file src="src/ios/KeychainItemWrapper.m" />
+    <framework src="Security.framework" />
+  </platform>
+
+</plugin>
