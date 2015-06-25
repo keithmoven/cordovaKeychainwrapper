@@ -1,5 +1,19 @@
-var exec = require('cordova/exec');
+(function(window){
+  var cordova = require('cordova');
 
-exports.coolMethod = function(arg0, success, error) {
-    exec(success, error, "cordovakeychainwrapper", "coolMethod", [arg0]);
-};
+  var keychain = {
+    storeValue: function(key, value, callback){
+
+    },
+
+    getValue: function(key, callback){
+
+    }
+  };
+
+  cordova.addConstructor(function(){
+    keychain.init();
+    window.keychain = keychain;
+  });
+  
+})(window);
